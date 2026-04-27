@@ -12,11 +12,36 @@ import java.time.LocalDate
 @RegisterConstructorMapper(Task::class)
 interface TaskDao {
 
-    @SqlQuery("SELECT * FROM tasks ORDER BY id")
+    @SqlQuery("""
+        SELECT 
+            id, 
+            title, 
+            description, 
+            status, 
+            priority, 
+            due_date AS dueDate, 
+            created_at AS createdAt, 
+            updated_at AS updatedAt 
+        FROM tasks 
+        ORDER BY id
+    """)
     fun getAll(): List<Task>
 
-    @SqlQuery("SELECT * FROM tasks WHERE id = :id")
+    @SqlQuery("""
+        SELECT 
+            id, 
+            title, 
+            description, 
+            status, 
+            priority, 
+            due_date AS dueDate, 
+            created_at AS createdAt, 
+            updated_at AS updatedAt 
+        FROM tasks 
+        WHERE id = :id
+    """)
     fun getById(@Bind("id") id: Long): Task?
+
 
     @SqlUpdate("""
         INSERT INTO tasks (title, description, status, priority, due_date)
