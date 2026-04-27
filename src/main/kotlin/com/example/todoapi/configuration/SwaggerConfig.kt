@@ -22,7 +22,7 @@ class SwaggerConfig {
                         REST API для управления списком задач.
                         
                         ## ER-диаграмма базы данных
-                        ![ER-диаграмма](/docs/er-diagram.png)
+                        ![ER-диаграмма](/docs/ER-Diagram.drawio.png)
                         """.trimIndent()
                     )
                     .version("1.0.0")
