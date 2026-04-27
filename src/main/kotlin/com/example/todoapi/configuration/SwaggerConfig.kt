@@ -17,7 +17,14 @@ class SwaggerConfig {
             .info(
                 Info()
                     .title("Todo List API")
-                    .description("REST API для управления списком задач")
+                    .description(
+                        """
+                        REST API для управления списком задач.
+                        
+                        ## ER-диаграмма базы данных
+                        ![ER-диаграмма](/docs/er-diagram.png)
+                        """.trimIndent()
+                    )
                     .version("1.0.0")
                     .contact(
                         Contact()
